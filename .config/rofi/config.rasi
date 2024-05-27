@@ -1,0 +1,21 @@
+configuration {
+	font: "JetBrains Mono 12";
+/*	modi: "window,run,ssh";*/
+/*	fixed-num-lines: true;*/
+	show-icons: true;
+	terminal: "alacritty";
+	icon-theme: "ePapirus";
+
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: " ";
+    display-run: " ";
+    display-window: " ";
+    display-power: " ";
+
+    modes: ["power:~/.config/rofi/power-menu",drun, window];
+}
+
+@theme "themes/rounded/theme.rasi"
