@@ -1,0 +1,5 @@
+.config/musikcube/plugin_*.json
+.config/musikcube/*.txt
+.config/musikcube/session.json
+.config/musikcube/playback.json
+.config/musikcube/1
