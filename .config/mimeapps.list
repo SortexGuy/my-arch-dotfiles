@@ -1,5 +1,35 @@
 [Added Associations]
-application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+application/x-ms-dos-executable=wine.desktop;
+image/gif=org.xfce.ristretto.desktop;
+application/json=xed.desktop;
+text/x-c++src=org.lite_xl.lite_xl.desktop;dev.lapce.lapce.desktop;xed.desktop;
+text/x-c++hdr=xed.desktop;
+image/png=org.gnome.FileRoller.desktop;xarchiver.desktop;org.xfce.ristretto.desktop;
+text/plain=xed.desktop;
+image/jpeg=org.xfce.ristretto.desktop;org.gnome.gThumb.desktop;
+application/x-xpinstall=xarchiver.desktop;
+audio/mpeg=audacity.desktop;mpv.desktop;org.xfce.Parole.desktop;
+audio/mp4=org.strawberrymusicplayer.strawberry.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-ND3WN2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-ND3WN2.desktop;
+x-scheme-handler/feed=userapp-Thunderbird-WSC5N2.desktop;
+application/rss+xml=userapp-Thunderbird-WSC5N2.desktop;
+application/x-extension-rss=userapp-Thunderbird-WSC5N2.desktop;
+x-scheme-handler/webcal=userapp-Thunderbird-40Q0N2.desktop;
+x-scheme-handler/webcals=userapp-Thunderbird-40Q0N2.desktop;
+image/vnd.microsoft.icon=org.gnome.gThumb.desktop;neovide.desktop;
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop;firefox.desktop;com.github.xournalpp.xournalpp.desktop;
 
 [Default Applications]
-application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
+image/png=org.xfce.ristretto.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-ND3WN2.desktop
+message/rfc822=userapp-Thunderbird-ND3WN2.desktop
+x-scheme-handler/mid=userapp-Thunderbird-ND3WN2.desktop
+x-scheme-handler/feed=userapp-Thunderbird-WSC5N2.desktop
+application/rss+xml=userapp-Thunderbird-WSC5N2.desktop
+application/x-extension-rss=userapp-Thunderbird-WSC5N2.desktop
+x-scheme-handler/webcal=userapp-Thunderbird-40Q0N2.desktop
+text/calendar=userapp-Thunderbird-40Q0N2.desktop
+application/x-extension-ics=userapp-Thunderbird-40Q0N2.desktop
+x-scheme-handler/webcals=userapp-Thunderbird-40Q0N2.desktop
+x-scheme-handler/discord-455712169795780630=discord-455712169795780630.desktop

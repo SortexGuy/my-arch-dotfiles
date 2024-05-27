@@ -1,3 +1,4 @@
+set -Ux TERMINAL alacritty
 set -Ux SYSTEMD_EDITOR nvim
 set -Ux EDITOR nvim
 set -gx VISUAL nvim
