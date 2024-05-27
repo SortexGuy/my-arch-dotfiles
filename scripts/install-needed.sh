@@ -1,2 +1,4 @@
+sudo pacman -S --needed base-devel git &&
+git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay && makepkg -si &&
 
-yay -S git stow --sudoloop --noconfirm
+yay -S stow --noconfirm --sudoloop
