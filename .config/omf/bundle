@@ -1,0 +1,4 @@
+package bang-bang
+package zoxide
+theme agnoster
+theme default
