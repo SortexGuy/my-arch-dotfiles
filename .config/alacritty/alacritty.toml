@@ -1,0 +1,19 @@
+import = ["/home/sortextg/.config/alacritty/catppuccin.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+[window]
+dynamic_padding = true
+opacity = 0.85
+
+[keyboard]
+bindings = [
+	{ key = "F11", action = "ToggleViMode" },
+]
