@@ -1,5 +1,7 @@
 [Added Associations]
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+image/webp=org.xfce.ristretto.desktop;
 
 [Default Applications]
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
+image/webp=org.xfce.ristretto.desktop

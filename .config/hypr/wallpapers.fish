@@ -1,9 +1,10 @@
 #! /usr/bin/fish
 
-set -g imgs ~/bgs/**.{jpg,jpeg,png,webp}
+set -g imgs ~/bgs/**_t.{jpg,jpeg,png,webp}
 if test $status -ne 0
+    set -f st $status
     echo "Bad Glob"
-    return $status
+    return $st
 end
 set -g img_count (count $imgs)
 
