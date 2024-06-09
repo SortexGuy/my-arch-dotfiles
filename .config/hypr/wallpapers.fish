@@ -1,6 +1,6 @@
 #! /usr/bin/fish
 
-set -g imgs ~/bgs/**_t.{jpg,jpeg,png,webp}
+set -g imgs ~/bgs/**.{jpg,jpeg,png,webp}
 if test $status -ne 0
     set -f st $status
     echo "Bad Glob"
@@ -16,12 +16,18 @@ function load_wallpaper
     set -f curr_img $imgs[$rand_num]
     echo $curr_img
     hyprctl $preload_cmd $curr_img
-    hyprctl $wallpaper_cmd "eDP-1, contain:$curr_img"
+    hyprctl $wallpaper_cmd "eDP-1, $curr_img"
     hyprctl hyprpaper unload all
+    dunstify -t 3000 "Changed wallpaper" "to $curr_img"
 end
 
 while true
-    sleep $(math "1 * 5")
+    sleep $(math "60 * 5")
+
+    pgrep hyprpaper >/dev/null
+    if test $status -ne 0
+        hyprpaper & disown
+    end
 
     load_wallpaper
 end
