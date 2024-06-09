@@ -24,6 +24,7 @@
         "clock"
     ],
     "hyprland/window": {
+        "on-click": "rofi -show drun",
         "format": "[{}]"
     },
     "hyprland/workspaces": {
