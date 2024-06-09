@@ -19,6 +19,7 @@ x-scheme-handler/webcal=userapp-Thunderbird-40Q0N2.desktop;
 x-scheme-handler/webcals=userapp-Thunderbird-40Q0N2.desktop;
 image/vnd.microsoft.icon=org.gnome.gThumb.desktop;neovide.desktop;
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop;firefox.desktop;com.github.xournalpp.xournalpp.desktop;
+image/svg+xml=org.xfce.ristretto.desktop;
 
 [Default Applications]
 image/png=org.xfce.ristretto.desktop

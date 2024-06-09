@@ -7,3 +7,5 @@
 [user]
 	name = Rubén A
 	email = sortexjuegos@gmail.com
+[pull]
+	rebase = true
