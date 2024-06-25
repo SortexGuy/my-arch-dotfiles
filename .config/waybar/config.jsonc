@@ -66,12 +66,9 @@
         // "timezone": "America/New_York",
         "interval": 30,
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%H:%M | %m-%d}",
         "format-alt": "{:%Y-%m-%d}"
     },
-    // "clock": {
-    //     "format": "{: %R   %d/%m}",
-    //     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    // },
     "cpu": {
         "interval": 2,
         "format": " {usage}%"
