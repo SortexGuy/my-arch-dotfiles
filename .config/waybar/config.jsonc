@@ -1,113 +1,153 @@
-{
-    "layer": "top",
-    "position": "top",
-    "mod": "dock",
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "height": 24,
-    "modules-left": [
-        "clock",
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "hyprland/window"
-    ],
-    "modules-right": [
-        "tray",
-        "custom/updates",
-        "cpu",
-        "memory",
-        "network",
-        "pulseaudio"
-    ],
-    "hyprland/window": {
-        "format": "[{}]"
-    },
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "on-click": "activate",
-        "format": "{icon}",
-        "format-icons": {
-            "1": "a",
-            "2": "s",
-            "3": "d",
-            "4": "f",
-            "5": "u",
-            "6": "i",
-            "7": "o",
-            "8": "p"
+[
+    {
+        "layer": "top",
+        "position": "top",
+        "mod": "dock",
+        "exclusive": true,
+        "passthrough": false,
+        "gtk-layer-shell": true,
+        "height": 24,
+        "modules-left": [
+            "clock",
+            "hyprland/workspaces"
+        ],
+        "modules-center": [
+            "hyprland/window"
+        ],
+        "modules-right": [
+            "tray",
+            "custom/updates",
+            "cpu",
+            "memory",
+            "network",
+            "pulseaudio"
+        ],
+        "hyprland/window": {
+            "format": "[{}]"
         },
-        "persistent-workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": []
+        "hyprland/workspaces": {
+            "disable-scroll": true,
+            "all-outputs": true,
+            "on-click": "activate",
+            "format": "{icon}",
+            "format-icons": {
+                "1": "a",
+                "2": "s",
+                "3": "d",
+                "4": "f",
+                "5": "u",
+                "6": "i",
+                "7": "o",
+                "8": "p"
+            },
+            "persistent-workspaces": {
+                "1": [],
+                "2": [],
+                "3": [],
+                "4": [],
+                "5": [],
+                "6": [],
+                "7": [],
+                "8": []
+            }
+        },
+        "custom/updates": {
+            "format": " {}",
+            "interval": 7200, // every two hours
+            "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'", // # of updates and tooltip details
+            "exec-if": "exit 0", // always run; consider advanced run conditions
+            "on-click": "alacritty -e sudo pacman -Syu", // update system
+            "signal": 8
+        },
+        "tray": {
+            "icon-size": 13,
+            "spacing": 10
+        },
+        "clock": {
+            // "timezone": "America/New_York",
+            "interval": 30,
+            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+            "format": "{:%H:%M | %m-%d}",
+            "format-alt": "{:%Y-%m-%d}"
+        },
+        "cpu": {
+            "interval": 2,
+            "format": " {usage}%"
+            // "tooltip": false
+        },
+        "memory": {
+            "interval": 2,
+            "format": " {}%"
+        },
+        "network": {
+            // "interface": "wlp2*", // (Optional) To force the use of this interface
+            "interval": 2,
+            "format-wifi": "{essid} ({signalStrength}%) ",
+            "format-ethernet": " 󰁝 {bandwidthUpBits}|󰁅 {bandwidthDownBits}",
+            "tooltip-format": " {ifname} via {gwaddr}",
+            "format-linked": " {ifname} (No IP)",
+            "format-disconnected": "Disconnected ⚠ {ifname}",
+            "format-alt": " {ifname}: {ipaddr}/{cidr}"
+        },
+        "pulseaudio": {
+            "format": "{icon} {volume}%",
+            "tooltip": false,
+            "format-muted": "󰖁 Muted",
+            "on-click": "pamixer -t",
+            "on-scroll-up": "pamixer -i 5",
+            "on-scroll-down": "pamixer -d 5",
+            "scroll-step": 5,
+            "format-icons": {
+                "headphone": "",
+                "hands-free": "",
+                "headset": "",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": [
+                    "",
+                    "",
+                    ""
+                ]
+            }
         }
-    },
-    "custom/updates": {
-        "format": " {}",
-        "interval": 7200, // every two hours
-        "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'", // # of updates and tooltip details
-        "exec-if": "exit 0", // always run; consider advanced run conditions
-        "on-click": "alacritty -e sudo pacman -Syu", // update system
-        "signal": 8
-    },
-    "tray": {
-        "icon-size": 13,
-        "spacing": 10
-    },
-    "clock": {
-        // "timezone": "America/New_York",
-        "interval": 30,
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%H:%M | %m-%d}",
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "cpu": {
-        "interval": 2,
-        "format": " {usage}%"
-        // "tooltip": false
-    },
-    "memory": {
-        "interval": 2,
-        "format": " {}%"
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "interval": 2,
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": " 󰁝 {bandwidthUpBits}|󰁅 {bandwidthDownBits}",
-        "tooltip-format": " {ifname} via {gwaddr}",
-        "format-linked": " {ifname} (No IP)",
-        "format-disconnected": "Disconnected ⚠ {ifname}",
-        "format-alt": " {ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "tooltip": false,
-        "format-muted": "󰖁 Muted",
-        "on-click": "pamixer -t",
-        "on-scroll-up": "pamixer -i 5",
-        "on-scroll-down": "pamixer -d 5",
-        "scroll-step": 5,
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        }
-    }
-}
+    } //,
+    // {
+    //     "layer": "top",
+    //     "position": "bottom",
+    //     "mod": "dock",
+    //     "exclusive": false,
+    //     "passthrough": true,
+    //     "gtk-layer-shell": true,
+    //     "height": 24,
+    //     "modules-left": [],
+    //     "modules-center": [
+    //         "cava"
+    //     ],
+    //     "modules-right": [],
+    //     "cava": {
+    //         "autosens": 0,
+    //         "sensitivity": 25,
+    //         "bars": 160,
+    //         "stereo": false,
+    //         "reverse": false,
+    //         "lower_cutoff_freq": 80,
+    //         "higher_cutoff_freq": 9000,
+    //         "method": "pipewire",
+    //         "source": "auto",
+    //         "hide_on_silence": true,
+    //         "bar_delimiter": 0,
+    //         "noise_reduction": 0.77,
+    //         "format-icons": [
+    //             "▁",
+    //             "▂",
+    //             "▃",
+    //             "▄",
+    //             "▅",
+    //             "▆",
+    //             "▇",
+    //             "█"
+    //         ]
+    //     }
+    // }
+]
