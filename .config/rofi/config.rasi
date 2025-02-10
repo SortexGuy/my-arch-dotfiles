@@ -15,7 +15,7 @@ configuration {
     display-window: " ";
     display-power: " ";
 
-    modes: ["power:~/.config/rofi/power-menu",drun, window];
+    modes: ["power:~/.config/rofi/power-menu","clipboard:~/.config/rofi/cliphist-rofi-img",drun,window];
 }
 
 @theme "themes/rounded/theme.rasi"
