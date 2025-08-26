@@ -1,0 +1,38 @@
+#!/bin/env bash
+
+SELECTION=$(echo -e "log off\nreboot\nshutdown" | fuzzel -d -p " " -w 15 -l 3)
+
+reboot_confirm() {
+	SELECTION=$(echo -e "confirm reboot\ncancel reboot" | fuzzel -d -p " " -w 15 -l 2)
+	case $SELCTION in
+		"confirm reboot")
+			reboot
+			;;
+		*)
+			;;
+	esac
+}
+shutdown_confirm() {
+		SELECTION=$(echo -e "confirm shutdown\ncancel shutdown" | fuzzel -d -p " " -w 15 -l 2)
+		case $SELCTION in
+			"confirm shutdown")
+				poweroff
+				;;
+			*)
+				;;
+		esac
+}
+
+case $SELECTION in
+	"log off")
+		hyprctl dispatch exit
+		;;
+	"reboot")
+		reboot_confirm
+		;;
+	"shutdown")
+		shutdown_confirm
+		;;
+	*)
+		;;
+esac

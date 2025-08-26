@@ -16,13 +16,13 @@
         ],
         "modules-right": [
             "tray",
-            "custom/updates",
             "cpu",
             "memory",
             "network",
             "pulseaudio"
         ],
         "hyprland/window": {
+            "on-click": "fuzzel",
             "format": "[{}]"
         },
         "hyprland/workspaces": {
@@ -51,20 +51,13 @@
                 "8": []
             }
         },
-        "custom/updates": {
-            "format": " {}",
-            "interval": 7200, // every two hours
-            "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'", // # of updates and tooltip details
-            "exec-if": "exit 0", // always run; consider advanced run conditions
-            "on-click": "alacritty -e sudo pacman -Syu", // update system
-            "signal": 8
-        },
         "tray": {
             "icon-size": 13,
             "spacing": 10
         },
         "clock": {
             // "timezone": "America/New_York",
+            "timezone": "America/Caracas",
             "interval": 30,
             "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
             "format": "{:%H:%M | %m-%d}",
@@ -111,43 +104,5 @@
                 ]
             }
         }
-    } //,
-    // {
-    //     "layer": "top",
-    //     "position": "bottom",
-    //     "mod": "dock",
-    //     "exclusive": false,
-    //     "passthrough": true,
-    //     "gtk-layer-shell": true,
-    //     "height": 24,
-    //     "modules-left": [],
-    //     "modules-center": [
-    //         "cava"
-    //     ],
-    //     "modules-right": [],
-    //     "cava": {
-    //         "autosens": 0,
-    //         "sensitivity": 25,
-    //         "bars": 160,
-    //         "stereo": false,
-    //         "reverse": false,
-    //         "lower_cutoff_freq": 80,
-    //         "higher_cutoff_freq": 9000,
-    //         "method": "pipewire",
-    //         "source": "auto",
-    //         "hide_on_silence": true,
-    //         "bar_delimiter": 0,
-    //         "noise_reduction": 0.77,
-    //         "format-icons": [
-    //             "▁",
-    //             "▂",
-    //             "▃",
-    //             "▄",
-    //             "▅",
-    //             "▆",
-    //             "▇",
-    //             "█"
-    //         ]
-    //     }
-    // }
+    }
 ]

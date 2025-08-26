@@ -9,3 +9,7 @@
 	email = sortexjuegos@gmail.com
 [pull]
 	rebase = true
+[diff]
+	tool = nvimdiff
+[merge]
+	tool = nvimdiff

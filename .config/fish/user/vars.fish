@@ -1,3 +1,5 @@
+source ~/.cache/wal/colors.fish
+
 set -Ux TERMINAL alacritty
 set -Ux SYSTEMD_EDITOR nvim
 set -Ux EDITOR nvim
