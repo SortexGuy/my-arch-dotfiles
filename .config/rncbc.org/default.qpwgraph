@@ -1,0 +1,22 @@
+<!DOCTYPE patchbay>
+<patchbay name="default" version="0.9.5">
+ <items>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Browsers Audio/Sink sink" port="Browsers Audio/Sink sink:monitor_FR"/>
+   <input node="UACDemoV1.0 Analog Stereo" port="UACDemoV1.0:playback_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Browsers Audio/Sink sink" port="Browsers Audio/Sink sink:monitor_FL"/>
+   <input node="UACDemoV1.0 Analog Stereo" port="UACDemoV1.0:playback_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Discord Audio/Sink sink" port="Discord Audio/Sink sink:monitor_FR"/>
+   <input node="UACDemoV1.0 Analog Stereo" port="UACDemoV1.0:playback_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Discord Audio/Sink sink" port="Discord Audio/Sink sink:monitor_FL"/>
+   <input node="UACDemoV1.0 Analog Stereo" port="UACDemoV1.0:playback_FL"/>
+  </item>
+ </items>
+</patchbay>
+
