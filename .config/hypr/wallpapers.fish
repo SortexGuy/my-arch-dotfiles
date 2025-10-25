@@ -6,28 +6,26 @@ if test $status -ne 0
     echo "Bad Glob"
     return $st
 end
-set -g img_count (count $imgs)
 
 function load_wallpaper
     set -f preload_cmd hyprpaper preload
     set -f wallpaper_cmd hyprpaper wallpaper
 
-    set -f rand_num (random 1 $img_count)
-    set -f curr_img $imgs[$rand_num]
-    echo $curr_img
+    set -f curr_img (random choice $imgs)
     hyprctl $preload_cmd $curr_img
     hyprctl $wallpaper_cmd "eDP-1, $curr_img"
+    sleep 2
     hyprctl hyprpaper unload all
-    dunstify -t 3000 "Changed wallpaper" "to $curr_img"
 end
 
 while true
-    sleep $(math "60 * 5")
-
     pgrep hyprpaper >/dev/null
     if test $status -ne 0
         hyprpaper & disown
+        sleep 2
     end
 
     load_wallpaper
+
+    sleep 2m
 end
